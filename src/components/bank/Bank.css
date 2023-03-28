@@ -1,0 +1,13 @@
+#bank {
+    width: 60%;
+    height: 100%;
+    background-color: aqua;
+    display: grid;
+    padding: 10px;
+    border-radius: 10px 0px 0px 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px 10px;
+    justify-items: stretch;
+    align-items: stretch;
+}
