@@ -7,7 +7,7 @@ export default function DrumPad(props: { drumpadAudio: DrumPadAudio, letter: str
 
     useEffect(() => {
         setTimeout(() => {
-            setBgColor("#ff00bf")
+            setBgColor("#7700b3")
             
         }, 200);
     }, [bgColor])
@@ -18,7 +18,7 @@ export default function DrumPad(props: { drumpadAudio: DrumPadAudio, letter: str
         audioElement.currentTime = 0
         audioElement.play()
         props.setPlayed(props.drumpadAudio.name)
-        setBgColor("#ff00ff")
+        setBgColor("#aa00ff")
     }
 
     return (
