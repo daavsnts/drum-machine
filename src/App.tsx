@@ -4,13 +4,13 @@ import Bank from './components/bank/Bank'
 import Controls from './components/controls/Controls'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [played, setPlayed] = useState("")
 
   return (
     <div className="App">
       <div id="drum-machine">
-        <Bank/>
-        <Controls/>
+        <Bank setPlayed={setPlayed}/>
+        <Controls played={played}/>
       </div>
     </div>
   )

@@ -1,4 +1,7 @@
-#drum-pad {
+#display {
+    width: 100%;
+    height: 50px;
+    background-color: #ff00bf;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -6,6 +9,6 @@
     filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3));
 }
 
-#drum-pad h1 {
+#diplay h1 {
     filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2));
 }

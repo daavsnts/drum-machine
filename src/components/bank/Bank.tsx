@@ -3,55 +3,54 @@ import { useEffect } from 'react'
 import { audioFactory } from './AudioList'
 import DrumPad from '../drumpad/DrumPad'
 
-export default function Bank() {
+export default function Bank(props: { setPlayed: React.Dispatch<React.SetStateAction<string>> }) {
     const audioList = audioFactory()
     
+    function playAudio(id: string, num: number) {
+        const audioElement = document.querySelector(id) as HTMLAudioElement
+        audioElement.currentTime = 0
+        audioElement.play()
+        audioList[num].bgState[1]('red')
+        props.setPlayed(audioList[num].name)
+    }
+
     function playAudioWithKeyboard(e: KeyboardEvent) {
         switch(e.key) {
             case 'q':
-                audioList[0].audio.currentTime = 0
-                audioList[0].audio.play()
-                audioList[0].bgState[1]('red')
+            case 'Q':
+                playAudio('#Q', 0)
                 break
             case 'w':
-                audioList[1].audio.currentTime = 0
-                audioList[1].audio.play()
-                audioList[1].bgState[1]('red')
+            case 'W':
+                playAudio('#W', 1)
                 break
             case 'e':
-                audioList[2].audio.currentTime = 0
-                audioList[2].audio.play()
-                audioList[2].bgState[1]('red')
+            case 'E':
+                playAudio('#E', 2)
                 break
             case 'a':
-                audioList[3].audio.currentTime = 0
-                audioList[3].audio.play()
-                audioList[3].bgState[1]('red')
+            case 'A':
+                playAudio('#A', 3)
                 break
             case 's':
-                audioList[4].audio.currentTime = 0
-                audioList[4].audio.play()
-                audioList[4].bgState[1]('red')
+            case 'S':
+                playAudio('#S', 4)
                 break
             case 'd':
-                audioList[5].audio.currentTime = 0
-                audioList[5].audio.play()
-                audioList[5].bgState[1]('red')
+            case 'D':
+                playAudio('#D', 5)
                 break
             case 'z':
-                audioList[6].audio.currentTime = 0
-                audioList[6].audio.play()
-                audioList[6].bgState[1]('red')
+            case 'Z':
+                playAudio('#Z', 6)
                 break
             case 'x':
-                audioList[7].audio.currentTime = 0
-                audioList[7].audio.play()
-                audioList[7].bgState[1]('red')
+            case 'X':
+                playAudio('#X', 7)
                 break
             case 'c':
-                audioList[8].audio.currentTime = 0
-                audioList[8].audio.play()
-                audioList[8].bgState[1]('red')
+            case 'C':
+                playAudio('#C', 8)
                 break
         }
     }
@@ -62,15 +61,15 @@ export default function Bank() {
 
     return (
         <div id="bank">
-            <DrumPad drumpadAudio={audioList[0]} letter="Q"/>
-            <DrumPad drumpadAudio={audioList[1]} letter="W"/>
-            <DrumPad drumpadAudio={audioList[2]} letter="E"/>
-            <DrumPad drumpadAudio={audioList[3]} letter="A"/>
-            <DrumPad drumpadAudio={audioList[4]} letter="S"/>
-            <DrumPad drumpadAudio={audioList[5]} letter="D"/>
-            <DrumPad drumpadAudio={audioList[6]} letter="Z"/>
-            <DrumPad drumpadAudio={audioList[7]} letter="X"/>
-            <DrumPad drumpadAudio={audioList[8]} letter="C"/>
+            <DrumPad drumpadAudio={audioList[0]} letter="Q" setPlayed={props.setPlayed}/>
+            <DrumPad drumpadAudio={audioList[1]} letter="W" setPlayed={props.setPlayed}/>
+            <DrumPad drumpadAudio={audioList[2]} letter="E" setPlayed={props.setPlayed}/>
+            <DrumPad drumpadAudio={audioList[3]} letter="A" setPlayed={props.setPlayed}/>
+            <DrumPad drumpadAudio={audioList[4]} letter="S" setPlayed={props.setPlayed}/>
+            <DrumPad drumpadAudio={audioList[5]} letter="D" setPlayed={props.setPlayed}/>
+            <DrumPad drumpadAudio={audioList[6]} letter="Z" setPlayed={props.setPlayed}/>
+            <DrumPad drumpadAudio={audioList[7]} letter="X" setPlayed={props.setPlayed}/>
+            <DrumPad drumpadAudio={audioList[8]} letter="C" setPlayed={props.setPlayed}/>
         </div>
     )
 }
