@@ -10,7 +10,7 @@ export default function Bank(props: { setPlayed: React.Dispatch<React.SetStateAc
         const audioElement = document.querySelector(id) as HTMLAudioElement
         audioElement.currentTime = 0
         audioElement.play()
-        audioList[num].bgState[1]('red')
+        audioList[num].bgState[1]('#aa00ff')
         props.setPlayed(audioList[num].name)
     }
 
